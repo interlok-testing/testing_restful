@@ -1,0 +1,16 @@
+# Compiled class files
+*.class
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+
+# VS Code
+.classpath
+.project
+.settings
+
+# DevOps
+.scannerwork/

@@ -1,0 +1,13 @@
+{
+  "variableSets" : {
+    "default" : { }
+  },
+  "variableXpaths" : { },
+  "uidInXincludeCompntListFileName" : false,
+  "xincludeXpaths" : { },
+  "additionalFiles" : {
+    "bootstrap.properties" : "bootstrap.properties"
+  },
+  "optionalComponentsInUse" : [ "com.adaptris:interlok-apache-http:4.0-SNAPSHOT", "com.adaptris:interlok-json:4.0-SNAPSHOT" ],
+  "structured" : true
+}

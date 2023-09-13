@@ -1,0 +1,179 @@
+<adapter>
+  <unique-id>desperate-visvesvaraya</unique-id>
+  <start-up-event-imp>com.adaptris.core.event.StandardAdapterStartUpEvent</start-up-event-imp>
+  <heartbeat-event-imp>com.adaptris.core.HeartbeatEvent</heartbeat-event-imp>
+  <shared-components>
+    <connections/>
+    <services/>
+  </shared-components>
+  <event-handler class="default-event-handler">
+    <unique-id>DefaultEventHandler</unique-id>
+    <connection class="null-connection">
+      <unique-id>drunk-hodgkin</unique-id>
+    </connection>
+    <producer class="null-message-producer">
+      <unique-id>pensive-stonebraker</unique-id>
+    </producer>
+  </event-handler>
+  <message-error-handler class="null-processing-exception-handler">
+    <unique-id>ecstatic-thompson</unique-id>
+  </message-error-handler>
+  <failed-message-retrier class="no-retries">
+    <unique-id>nostalgic-mcnulty</unique-id>
+  </failed-message-retrier>
+  <channel-list>
+    <channel>
+      <consume-connection class="jetty-embedded-connection">
+        <unique-id>dreamy-goodall</unique-id>
+      </consume-connection>
+      <produce-connection class="null-connection">
+        <unique-id>focused-franklin</unique-id>
+      </produce-connection>
+      <workflow-list>
+        <standard-workflow>
+          <consumer class="jetty-message-consumer">
+            <unique-id>angry-bose</unique-id>
+            <path>/api/fail</path>
+          </consumer>
+          <service-collection class="service-list">
+            <unique-id>elastic-payne</unique-id>
+            <services>
+              <throw-exception-service>
+                <unique-id>jolly-lewin</unique-id>
+                <exception-generator class="configured-exception">
+                  <message>Always Fail</message>
+                </exception-generator>
+              </throw-exception-service>
+            </services>
+          </service-collection>
+          <producer class="null-message-producer">
+            <unique-id>furious-raman</unique-id>
+          </producer>
+          <produce-exception-handler class="null-produce-exception-handler"/>
+          <unique-id>always-fail</unique-id>
+        </standard-workflow>
+        <standard-workflow>
+          <consumer class="jetty-message-consumer">
+            <unique-id>angry-bose</unique-id>
+            <path>/api/success</path>
+          </consumer>
+          <service-collection class="service-list">
+            <unique-id>elastic-payne</unique-id>
+            <services>
+              <payload-from-template>
+                <unique-id>hungry-curie</unique-id>
+                <metadata-tokens/>
+                <template><![CDATA[{"status": "ok"}]]></template>
+              </payload-from-template>
+              <jetty-response-service>
+                <unique-id>sleepy-wright</unique-id>
+                <http-status>200</http-status>
+                <content-type>application/json</content-type>
+                <response-header-provider class="jetty-no-response-headers"/>
+              </jetty-response-service>
+            </services>
+          </service-collection>
+          <producer class="null-message-producer">
+            <unique-id>furious-raman</unique-id>
+          </producer>
+          <produce-exception-handler class="null-produce-exception-handler"/>
+          <unique-id>success</unique-id>
+        </standard-workflow>
+      </workflow-list>
+      <message-error-handler class="standard-processing-exception-handler">
+        <unique-id>evil-euclid</unique-id>
+        <processing-exception-service class="service-list">
+          <unique-id>hopeful-ride</unique-id>
+          <services>
+            <exception-report-service>
+              <unique-id>adoring-wescoff</unique-id>
+              <exception-serializer class="exception-as-json"/>
+            </exception-report-service>
+            <jetty-response-service>
+              <unique-id>agitated-gates</unique-id>
+              <http-status>500</http-status>
+              <content-type>application/json</content-type>
+              <response-header-provider class="jetty-no-response-headers"/>
+            </jetty-response-service>
+          </services>
+        </processing-exception-service>
+      </message-error-handler>
+      <unique-id>jetty</unique-id>
+    </channel>
+    <channel>
+      <consume-connection class="null-connection">
+        <unique-id>angry-bohr</unique-id>
+      </consume-connection>
+      <produce-connection class="null-connection">
+        <unique-id>naughty-bose</unique-id>
+      </produce-connection>
+      <workflow-list>
+        <standard-workflow>
+          <consumer class="polling-trigger">
+            <unique-id>determined-jennings</unique-id>
+            <poller class="fixed-interval-poller">
+              <poll-interval>
+                <unit>SECONDS</unit>
+                <interval>30</interval>
+              </poll-interval>
+            </poller>
+          </consumer>
+          <service-collection class="service-list">
+            <unique-id>angry-mclean</unique-id>
+            <services>
+              <apache-http-request-service>
+                <unique-id>call-fail</unique-id>
+                <url>http://localhost:8080/api/fail</url>
+                <content-type>text/plain</content-type>
+                <method>GET</method>
+                <response-header-handler class="apache-http-discard-response-headers"/>
+                <request-header-provider class="apache-http-no-request-headers"/>
+                <authenticator class="http-no-authentication"/>
+              </apache-http-request-service>
+            </services>
+          </service-collection>
+          <producer class="null-message-producer">
+            <unique-id>dreamy-torvalds</unique-id>
+          </producer>
+          <produce-exception-handler class="null-produce-exception-handler"/>
+          <unique-id>trigger-failed</unique-id>
+        </standard-workflow>
+        <standard-workflow>
+          <consumer class="polling-trigger">
+            <unique-id>determined-jennings</unique-id>
+            <poller class="fixed-interval-poller">
+              <poll-interval>
+                <unit>SECONDS</unit>
+                <interval>5</interval>
+              </poll-interval>
+            </poller>
+          </consumer>
+          <service-collection class="service-list">
+            <unique-id>angry-mclean</unique-id>
+            <services>
+              <apache-http-request-service>
+                <unique-id>call-success</unique-id>
+                <url>http://localhost:8080/api/success</url>
+                <content-type>text/plain</content-type>
+                <method>GET</method>
+                <response-header-handler class="apache-http-discard-response-headers"/>
+                <request-header-provider class="apache-http-no-request-headers"/>
+                <authenticator class="http-no-authentication"/>
+              </apache-http-request-service>
+            </services>
+          </service-collection>
+          <producer class="null-message-producer">
+            <unique-id>dreamy-torvalds</unique-id>
+          </producer>
+          <produce-exception-handler class="null-produce-exception-handler"/>
+          <unique-id>trigger-success</unique-id>
+        </standard-workflow>
+      </workflow-list>
+      <unique-id>null</unique-id>
+    </channel>
+  </channel-list>
+  <message-error-digester class="standard-message-error-digester">
+    <unique-id>ErrorDigest</unique-id>
+    <digest-max-size>100</digest-max-size>
+  </message-error-digester>
+</adapter>

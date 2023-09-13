@@ -1,0 +1,17 @@
+ext {
+  interlokParentGradle = "https://raw.githubusercontent.com/adaptris/interlok-build-parent/main/v4/build.gradle"
+  interlokVersion = '5.0-SNAPSHOT'
+  buildEnv = 'dev'
+}
+
+allprojects {
+  apply from: "${interlokParentGradle}"
+}
+
+dependencies {
+  interlokRuntime ("com.adaptris:interlok-apache-http:$interlokVersion")
+  interlokRuntime ("com.adaptris:interlok-json:$interlokVersion")
+  interlokRuntime ("com.adaptris:interlok-rest-metrics-profiler:$interlokVersion")
+  interlokRuntime ("com.adaptris:interlok-rest-metrics-jvm:$interlokVersion")
+  interlokRuntime ("com.adaptris:interlok-rest-provider-prometheus:$interlokVersion")
+}

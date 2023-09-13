@@ -1,0 +1,18 @@
+```plantuml
+@startuml
+skinparam componentStyle rectangle
+
+package "Interlok" as Interlok {
+  [InterlokMetrics]
+  [JvmMetrics]
+  [HTTP Generation]
+  [HTTP Consumers]
+}
+
+[HTTP Generation] --> [HTTP Consumers]
+InterlokMetrics --> [Prometheus]
+JvmMetrics --> [Prometheus]
+[Prometheus] --> [Grafana]
+[Grafana] --> browser
+@enduml
+```
