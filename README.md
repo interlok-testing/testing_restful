@@ -1,5 +1,8 @@
 # Interlok Restful Services Testing
 
+[![license](https://img.shields.io/github/license/interlok-testing/testing_restful.svg)](https://github.com/interlok-testing/testing_restful/blob/develop/LICENSE)
+[![Actions Status](https://github.com/interlok-testing/testing_restful/actions/workflows/gradle-build.yml/badge.svg)](https://github.com/interlok-testing/testing_restful/actions/workflows/gradle-build.yml)
+
 Project tests;
  - interlok-apache-http
  - interlok-json
