@@ -8,6 +8,6 @@
   "additionalFiles" : {
     "bootstrap.properties" : "bootstrap.properties"
   },
-  "optionalComponentsInUse" : [ "com.adaptris:interlok-apache-http:4.0-SNAPSHOT", "com.adaptris:interlok-json:4.0-SNAPSHOT" ],
+  "optionalComponentsInUse" : [ "com.adaptris:interlok-apache-http:5.0-SNAPSHOT", "com.adaptris:interlok-json:5.0-SNAPSHOT" ],
   "structured" : true
 }
