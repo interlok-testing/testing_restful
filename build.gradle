@@ -1,12 +1,15 @@
 ext {
-  interlokParentGradle = "https://raw.githubusercontent.com/adaptris/interlok-build-parent/main/v5/build.gradle"
-  interlokVersion = '5.0-SNAPSHOT'
+  testingCommonGradle = "https://raw.githubusercontent.com/interlok-testing/testing_common/refs/heads/master/common.gradle"
   buildEnv = 'dev'
+  interlokTestingVersion = "0.1"
+  grafanaTestContainerVersion = "1.2.20"
+  restAssuredVersion = "5.5.0"
 }
 
 allprojects {
-  apply from: "${interlokParentGradle}"
+  apply from: "${testingCommonGradle}"
 }
+
 
 dependencies {
   interlokRuntime ("com.adaptris:interlok-apache-http:$interlokVersion")
@@ -14,4 +17,8 @@ dependencies {
   interlokRuntime ("com.adaptris:interlok-rest-metrics-profiler:$interlokVersion")
   interlokRuntime ("com.adaptris:interlok-rest-metrics-jvm:$interlokVersion")
   interlokRuntime ("com.adaptris:interlok-rest-provider-prometheus:$interlokVersion")
+
+  testImplementation "io.rest-assured:rest-assured:$restAssuredVersion"
+  testImplementation "io.rest-assured:json-path:$restAssuredVersion"
+  testImplementation group: "com.adaptris", name: "interlok-testing-common", version: "$interlokTestingVersion"
 }
