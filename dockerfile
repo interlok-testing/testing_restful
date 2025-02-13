@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21
+FROM eclipse-temurin:17
 RUN apt-get -y -q update && \
  apt-get install --no-install-recommends -y curl bash unzip ca-certificates gosu && \
  groupadd -r interlok && \

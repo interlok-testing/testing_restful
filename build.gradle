@@ -22,3 +22,7 @@ dependencies {
   testImplementation "io.rest-assured:json-path:$restAssuredVersion"
   testImplementation group: "com.adaptris", name: "interlok-testing-common", version: "$interlokTestingVersion"
 }
+
+tasks.named('functionalTest', Test) {
+  workingDir = "$projectDir"
+}
