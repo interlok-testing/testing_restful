@@ -1,4 +1,4 @@
-package com.adaptris.restful;
+package com.adaptris.restful.test;
 
 import com.adaptris.testing.DockerComposeFunctionalTest;
 import org.junit.jupiter.api.Test;
