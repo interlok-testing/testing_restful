@@ -19,7 +19,7 @@ public class DefaultFunctionalTest extends DockerComposeFunctionalTest {
   protected static int INTERLOK_PORT = 8080;
   protected static int PROMETHEUS_PORT = 9090;
   protected static int GRAFANA_PORT = 3000;
-  protected static WaitStrategy defaultWaitStrategy = Wait.forListeningPort().withStartupTimeout(Duration.ofSeconds(30));
+  protected static WaitStrategy defaultWaitStrategy = Wait.forListeningPort().withStartupTimeout(Duration.ofSeconds(45));
 
   protected ComposeContainer setupContainers() {
       return new ComposeContainer(new File("docker-compose.yaml"))
